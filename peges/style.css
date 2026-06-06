@@ -1,0 +1,22 @@
+.dark {
+    background: #0f172a !important;
+    color: white !important;
+}
+
+.dark nav,
+.dark header,
+.dark .bg-white {
+    background: #1e293b;
+    color: white ;
+}
+
+.dark input {
+    background: #334155;
+    color: white ;
+    border: 1px solid #475569;
+}
+
+.dark .bg-gray-100 {
+    background: #111827 ;
+}
+

@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body data-aos="fade-down" id="body" class="bg-white text-black transition-all duration-300">
+
+  <header>
+    <div class="bg-gray-100 max-[668px]:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+
+        <div class="flex items-center space-x-2 text-sm">
+          <span class="text-gray-700 hidden sm:inline">Ваш город:</span>
+
+          <button data-dropdown-toggle="dropdown" class="text-blue-600 font-medium inline-flex items-center">
+            Москва
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div id="dropdown" class="hidden bg-white rounded-lg shadow w-40">
+            <ul class="py-2 text-sm text-gray-700">
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Москва</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Ташкент</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Самарканд</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <a href="#" class="bg-green-500 p-2 rounded-md">
+            <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png">
+          </a>
+          <a href="#" class="bg-blue-500 p-2 rounded-md">
+            <img src="https://cdn-icons-png.flaticon.com/24/2111/2111646.png">
+          </a>
+          <a href="#" class="bg-blue-700 p-2 rounded-md">
+            <img src="https://cdn-icons-png.flaticon.com/24/145/145813.png">
+          </a>
+          <button class="dark-btn bg-black text-white px-4 py-2 rounded-lg">
+            Dark Mode
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <nav>
+      <div class="max-w-7xl mx-auto px-4 py-3">
+
+        <div class="flex items-center justify-between">
+
+          <div class="flex items-center justify-between">
+
+            <a href="../index.html">
+
+              <img src="../imges/Vector (6).png" class="w-8 sm:w-auto">
+            </a>
+
+
+            <div class="relative w-full sm:flex-1 hidden max-[600px]:block">
+
+              <!-- SEARCH -->
+              <div id="mobileSearchBox" class="relative">
+
+                <input type="text" onclick="openMobileModal()" class="relative z-50 w-full border-none
+      pl-10 pr-4 py-2 rounded-lg outline-none bg-white" placeholder="Поиск по каталогу товаров">
+
+                <!-- ICON -->
+                <svg class="w-5 h-5 text-gray-400 absolute left-3 top-2.5 z-50" fill="none" stroke="currentColor"
+                  stroke-width="2" viewBox="0 0 24 24">
+
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.3-4.3" />
+                </svg>
+
+              </div>
+
+              <!-- BLUR -->
+              <div id="mobileOverlay" onclick="closeMobileModal()"
+                class="fixed inset-0 bg-white/30 backdrop-blur-sm hidden z-40">
+              </div>
+
+              
+            </div>
+
+            <script>
+              const mobileModal = document.getElementById("mobileModal");
+              const mobileOverlay = document.getElementById("mobileOverlay");
+
+              function openMobileModal() {
+                mobileModal.classList.remove("hidden");
+                mobileOverlay.classList.remove("hidden");
+              }
+
+              function closeMobileModal() {
+                mobileModal.classList.add("hidden");
+                mobileOverlay.classList.add("hidden");
+              }
+            </script>
+
+
+          </div>
+
+          <div class="flex items-center justify-between gap-5">
+
+            <img class="hidden max-[640px]:block" src="../imges/Vector (3).svg" alt="">
+
+            <span class="flex gap-1 items-center hidden max-[1000px]:block">
+              <img class="hidden max-[640px]:block" src="../imges/Vector.svg">
+              <p class="max-[640px]:hidden"> +7 812 561 96 62</p>
+            </span>
+
+            <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+              aria-controls="drawer-navigation" class="lg:hidden p-2 rounded-lg hover:bg-gray-200">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+
+          <ul class="hidden lg:flex items-center space-x-5 text-sm font-medium">
+            <li><a href="../peges/main.html" class="hover:text-blue-600">Весь каталог</a></li>
+            <li><a href="../peges/screch.html" class="hover:text-blue-600">🔥 Акции</a></li>
+            <li><a href="../peges/menu.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Гарантия</a></li>
+            <li><a href="../peges/catalog.html" class="hover:text-blue-600">Политика возврата</a></li>
+            <li><a href="../peges/modal.html" class="hover:text-blue-600">Кредит</a></li>
+            <li><a href="../peges/basket.html" class="hover:text-blue-600">Доставка и оплата</a></li>
+            <li><a href="" class="hover:text-blue-600">Отзывы</a></li>
+            <li><a href="" class="hover:text-blue-600">Контакты</a></li>
+          </ul>
+
+
+
+          <div class="hidden lg:flex flex-col items-end text-sm">
+            <span class="flex gap-1 items-center">
+              <img src="../imges/Vector.svg"> +7 812 561 96 62
+            </span>
+            <a href="#" class="text-blue-600">Вам перезвонить?</a>
+          </div>
+
+          <!-- Modal toggle -->
+          <button data-modal-target="premium-modal" data-modal-toggle="premium-modal"
+            class="px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-cyan-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/40">
+            <img class="h-[20px]" src="../imges/user (1).png" alt="">
+          </button>
+
+          <!-- Premium Blue Modal -->
+          <div id="premium-modal" tabindex="-1" aria-hidden="true"
+            class="hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen backdrop-blur-md bg-black/50">
+
+            <div class="relative w-full max-w-2xl">
+
+              <!-- Modal Content -->
+              <div
+                class="relative overflow-hidden border shadow-2xl rounded-3xl border-white/10 bg-slate-900 shadow-blue-500/20">
+
+                <!-- Glow Effects -->
+                <div class="absolute -top-20 -left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
+
+                <!-- Header -->
+                <div class="relative flex items-center justify-between px-8 py-6 border-b border-white/10">
+
+                  <div>
+                    <h3 class="text-2xl font-bold text-white">
+                      Свяжитесь с нами для получения подробной информации.
+                    </h3>
+
+
+                  </div>
+
+
+                </div>
+
+                <!-- Body -->
+                <div class="relative px-8 py-8 space-y-5">
+
+                  <div class="flex min-h-full flex-col justify-center px-6 py-5 lg:px-8">
+
+
+                    <div class=" sm:mx-auto sm:w-full sm:max-w-sm">
+                      <form action="#" method="POST" class="space-y-6">
+                        <div>
+                          <label for="email" class="block text-sm/6 font-medium text-gray-100">Email address</label>
+                          <div class="mt-2">
+                            <input id="email" type="email" name="email" required autocomplete="email"
+                              class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="flex items-center justify-between">
+                            <label for="password" class="block text-sm/6 font-medium text-gray-100">Password</label>
+                            <div class="text-sm">
+                              <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">Forgot
+                                password?</a>
+                            </div>
+                          </div>
+                          <div class="mt-2">
+                            <input id="password" type="password" name="password" required
+                              autocomplete="current-password"
+                              class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                          </div>
+                        </div>
+
+                        <div>
+                          <button type="submit"
+                            class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign
+                            in</button>
+                        </div>
+                      </form>
+
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="relative flex items-center justify-end gap-4 px-8 py-6 border-t border-white/10">
+
+                  <button data-modal-hide="premium-modal" type="button"
+                    class="px-5 py-3 text-sm font-medium transition-all duration-300 border text-slate-300 rounded-2xl border-white/10 bg-white/5 hover:bg-white/10 hover:text-white">
+                    Отмена
+                  </button>
+
+                  <button data-modal-hide="premium-modal" type="button"
+                    class="px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-cyan-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40">
+                    Принять
+                  </button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </nav>
+
+    <div>
+
+    </div>
+
+    <div id="drawer-navigation"
+      class="fixed top-0 left-0 z-40 w-72 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white"
+      tabindex="-1">
+
+      <div class="flex items-center justify-between mb-4">
+        <img src="../imges/Vector (6).png" class="w-8">
+        <button data-drawer-hide="drawer-navigation">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="../peges/main.html" class="hover:text-blue-600">Весь каталог</a></li>
+        <li><a href="../peges/screch.html" class="hover:text-blue-600">🔥 Акции</a></li>
+        <li><a href="../peges/menu.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Гарантия</a></li>
+        <li><a href="../peges/catalog.html" class="hover:text-blue-600">Политика возврата</a></li>
+        <li><a href="../peges/modal.html" class="hover:text-blue-600">Кредит</a></li>
+        <li><a href="../peges/basket.html" class="hover:text-blue-600">Доставка и оплата</a></li>
+        <li><a href="#" class="block py-2 hover:text-blue-600">Отзывы</a></li>
+        <li><a href="#" class="block py-2 hover:text-blue-600">Контакты</a></li>
+      </ul>
+
+      <div class="mt-6 pt-4 border-t text-sm">
+        <span class="flex items-center gap-2">
+          <img src="../imges/Vector.svg"> +7 812 561 96 62
+        </span>
+        <a href="#" class="text-blue-600">Вам перезвонить?</a>
+      </div>
+
+
+
+    </div>
+
+    <div>
+      <div class="max-w-7xl mx-auto px-4 py-3 max-[1000px]:hidden">
+
+        <div class="flex flex-wrap items-center gap-3">
+
+          <button
+            class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 w-full sm:w-auto justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="5" cy="5" r="1.5" />
+              <circle cx="5" cy="12" r="1.5" />
+              <circle cx="5" cy="19" r="1.5" />
+            </svg>
+            <span>Каталог товаров</span>
+          </button>
+
+          <div class="relative w-full sm:flex-1">
+
+            <!-- SEARCH -->
+            <div id="searchBox" class="relative">
+
+              <input type="text" onclick="openModal()"
+                class="relative z-50 w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 outline-none bg-white"
+                placeholder="Поиск по каталогу товаров">
+
+              <!-- ICON -->
+              <svg class="w-5 h-5 text-gray-400 absolute left-3 top-2.5 z-50" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.3-4.3" />
+              </svg>
+
+            </div>
+
+            <!-- BLUR -->
+            <div id="overlay" onclick="closeModal()" class="fixed inset-0 bg-white/30 backdrop-blur-sm hidden z-40">
+            </div>
+
+            <!-- MODAL -->
+            <div id="modal" class="absolute top-[55px] left-0 w-full h-[520px] overflow-y-auto
+    bg-[#F5F5F5] rounded-[24px] p-[40px]
+    hidden z-50 shadow-2xl">
+
+              <!-- IMAGE -->
+              <div class="flex justify-center">
+                <img src="../imges/Blue opened box flying tilted right.png" class="w-[108px] h-[100px] object-contain"
+                  alt="">
+              </div>
+
+              <!-- TITLE -->
+              <h2 class="text-center text-[32px] font-bold leading-[56px] mt-[20px]">
+                В корзине пока ничего нет
+              </h2>
+
+              <!-- TEXT -->
+              <p class="text-center text-[16px] text-[#666] mt-[10px]">
+                Но вы можете легко это исправить
+              </p>
+
+              <!-- BUTTON -->
+              <div class="flex justify-center mt-[30px]">
+                <button class="bg-[#0A73E8] hover:bg-blue-700 text-white
+        text-[16px] px-[60px] py-[18px]
+        rounded-[16px] transition">
+                  начать покупки
+                </button>
+              </div>
+
+              <!-- SUBTITLE -->
+              <h3 class="text-center text-[20px] font-semibold
+      mt-[50px] mb-[30px]">
+                Кстати, вы это смотрели
+              </h3>
+
+              <!-- PRODUCTS -->
+              <div class="grid grid-cols-5 gap-[20px]">
+
+                <!-- CARD -->
+                <div class="bg-white rounded-[16px] p-[15px] shadow-sm text-center">
+                  <img src="../imges/img.svg" class="w-[60px] h-[90px] object-contain mx-auto" alt="">
+
+                  <h4 class="text-[20px] leading-[24px] mt-[10px]">
+                    iPhone 14 Pro Max
+                  </h4>
+
+                  <p class="text-[18px] text-[#444] mt-[4px]">
+                    Deep Purple
+                  </p>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-[16px] p-[15px] shadow-sm text-center">
+                  <img src="../imges/img.svg" class="w-[60px] h-[90px] object-contain mx-auto" alt="">
+
+                  <h4 class="text-[20px] leading-[24px] mt-[10px]">
+                    iPhone 14 Pro Max
+                  </h4>
+
+                  <p class="text-[18px] text-[#444] mt-[4px]">
+                    Deep Purple
+                  </p>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-[16px] p-[15px] shadow-sm text-center">
+                  <img src="../imges/img.svg" class="w-[60px] h-[90px] object-contain mx-auto" alt="">
+
+                  <h4 class="text-[20px] leading-[24px] mt-[10px]">
+                    iPhone 14 Pro Max
+                  </h4>
+
+                  <p class="text-[18px] text-[#444] mt-[4px]">
+                    Deep Purple
+                  </p>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-[16px] p-[15px] shadow-sm text-center">
+                  <img src="../imges/img.svg" class="w-[60px] h-[90px] object-contain mx-auto" alt="">
+
+                  <h4 class="text-[20px] leading-[24px] mt-[10px]">
+                    iPhone 14 Pro Max
+                  </h4>
+
+                  <p class="text-[18px] text-[#444] mt-[4px]">
+                    Deep Purple
+                  </p>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-[16px] p-[15px] shadow-sm text-center">
+                  <img src="../imges/img.svg" class="w-[60px] h-[90px] object-contain mx-auto" alt="">
+
+                  <h4 class="text-[20px] leading-[24px] mt-[10px]">
+                    iPhone 14 Pro Max
+                  </h4>
+
+                  <p class="text-[18px] text-[#444] mt-[4px]">
+                    Deep Purple
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <script>
+            const modal = document.getElementById("modal");
+            const overlay = document.getElementById("overlay");
+
+            function openModal() {
+              modal.classList.remove("hidden");
+              overlay.classList.remove("hidden");
+            }
+
+            function closeModal() {
+              modal.classList.add("hidden");
+              overlay.classList.add("hidden");
+            }
+          </script>
+
+          <div class="flex md:flex items-center gap-2">
+            <button class="p-2 rounded-lg hover:bg-gray-300 w-[40px]">
+              <img src="../imges/Vector (1).svg">
+            </button>
+            <button class="p-2 rounded-lg hover:bg-gray-300 w-[40px]">
+              <img src="../imges/gg_filters.svg">
+            </button>
+          </div>
+
+          <button
+            class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-xl hover:bg-green-600 w-full sm:w-auto justify-center">
+            <img src="../imges/Vector (2).svg">
+            <span>В корзине</span>
+            <span class="bg-green-700 text-xs px-2 py-0.5 rounded-full">1</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hidden min-[1080px]:block bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4 py-3">
+
+        <div class="flex items-center justify-between">
+
+          <div class="flex items-center gap-8">
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img src="../imges/Vector (5).svg" alt=""> <span>iPhone</span>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img src="../imges/ipadh_119979 3.svg" alt=""> <span>iPad</span>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img src="./imges/Vector 6.svg" alt=""> <span>Macbook и iMac</span>
+            </div>
+
+            <a href="./fatch.html" class="flex items-center gap-2 cursor-pointer">
+              <img src="../imges/Vector (7).svg" alt=""> <span>Watch</span>
+            </a>
+
+            <div class="flex items-center gap-2 cursor-pointer text-blue-500">
+              <img src="../imges/Outline_Icons_1_.svg" alt=""> <span>Гаджеты</span>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img src="../imges/iphonex_119956 5.svg" alt=""> <span>Аксессуары</span>
+            </div>
+
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-black to-gray-500 bg-linar-to  text-white px-4 py-2 rounded-xl flex items-center gap-3 cursor-pointer">
+            <img src="../imges/design_startframe__cffzwjeyro2q_large (1) 1.svg" class="w-10 h-10 rounded-md" /><a
+              href="./iphone.html" class="text-sm w-full ">iPhone 14 Pro Max</a>
+            <span><img src="../imges/Vector (4).svg" alt=""></span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+  <section data-aos="fade-down" class="max-w-7xl mx-auto px-4 py-3">
+      <h1 class="text-center text-[48px] font-bold  max-[666px]:texhidden max-[666px]:pb-7">купить iPhone в Москве
+      </h1>
+      <h2 class="text-xl font-semibold text-blue-600 mb-6">
+        Самое популярное
+      </h2>
+
+      <div class="grid 
+            grid-cols-1
+            min-[616px]:grid-cols-2
+            min-[750px]:grid-cols-3
+            lg:grid-cols-4
+            gap-6">
+
+        <!-- CARD -->
+
+
+        <div data-aos="fade-down" class="bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+          <!-- TOP -->
+          <div class="flex justify-between items-center"> <!-- RATING -->
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">★★★★<span class="text-gray-300">★</span> <span
+                  class="text-blue-500 text-[14px]">(14)</span> </div>
+            </div>
+            <div> <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]"> <img src="../imges/Vector (1).svg"> </button>
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]"> <img src="../imges/gg_filters.svg"> </button>
+            </div>
+          </div>
+          <div> <!-- TITLE -->
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3 "> Apple iPhone XS
+              Max <br>256 ГБ золотой </h3>
+          </div> <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1"> <img src="../img/17 yuzi oq.png" onclick="openModal()"
+              class="  w-[300px]  h-[300px] object-contain " /> </div> <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3"> <!-- PRICE -->
+            <div> <span class="text-black/50 text-[16px]"> <span
+                  class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">vsv</span> Есть в наличии</span> <span
+                class="text-black/50 text-[16px]">Гарантия 1 год</span> </div>
+            <div> <span class="text-sm text-gray-400 line-through">137 900 ₽</span> <span class="text-lg font-bold">137
+                900 ₽</span> </div> <br> <!-- BUTTON --> <button
+              class="mt-1 w-full bg-[#6FD91C] text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+              <span class="text-lg font-bold hidden max-[700px]:block">137 900 ₽</span> <img class="w-[20px] h-[20px]"
+                src="../imges/Vector (8).svg" alt="car"> <span class="max-[700px]:hidden">в корзину</span> </button>
+          </div>
+          <div class="flex justify-center items-center gap-8 pt-2"> <span class="text-blue-500 text-[16xp]">Хочу
+              дешевле</span> <span class="text-[16xp]">Купить в 1 клик</span> </div>
+        </div>
+
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/17 qora.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/17 oraenj.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+        <div class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+        <!-- TOP -->
+        <div class="flex justify-between items-center">
+
+          <div>
+            <div class="text-yellow-400 text-[24px] cursor-pointer">
+              ★★★★<span class="text-gray-300">★</span>
+
+              <span class="text-blue-500 text-[14px]">
+                (14)
+              </span>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+
+            <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+              <img src="../imges/Vector (1).svg">
+            </button>
+
+            <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+              <img src="../imges/gg_filters.svg">
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- TITLE -->
+        <div>
+          <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+            Apple iPhone XS Max <br>
+            256 ГБ золотой
+          </h3>
+        </div>
+
+
+        <div class="flex justify-center items-center flex-1">
+          <img src="../imges/img.png" onclick="openModal()" class="w-full object-contain cursor-pointer">
+        </div>
+        <div id="iphoneModal" class="fixed inset-0 bg-white z-[9999] hidden  pt-[30px]">
+
+          <!-- Close -->
+          <button onclick="closeModal()" class="absolute top-5 right-5 text-3xl font-bold">
+            ✕
+          </button>
+          <h1 class="text-[30px] font-semibold leading-tight mb-4">
+            Apple iPhone 17 Pro/Pro Max, 256 ГБ, SIM+eSIM,
+            зарегистрирован в системе UzIMEI
+          </h1>
+
+          <div class="flex gap-10">
+
+            <!-- Rasm qismi -->
+            <div class="flex gap-4">
+              <div class="flex flex-col gap-3">
+                <img src="../img/17 oq .png" class=" w-[80px] h-[110px] ">
+                <img src="../img/17 yoni oq.png" class=" w-[80px] h-[110px] ">
+                <img src="../img/17oq.png" class=" w-[80px] h-[110px] ">
+              </div>
+
+              <div class="w-[600px] h-[600px] flex items-center justify-center">
+                <img src="../img/17 yuzi oq.png" class="w-full h-full object-contain">
+              </div>
+            </div>
+
+            <!-- Правая часть -->
+            <div class="w-[380px] border rounded-3xl p-6">
+
+              <p class="text-gray-500 text-sm">Цвет: белый</p>
+
+              <h2 class="text-[32px] font-bold text-blue-600 mt-4">
+                137 900 ₽
+              </h2>
+
+            <button
+                class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+                <span class="text-lg font-bold hidden max-[700px]:block">
+                  137 900 ₽
+                </span>
+
+                <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+                <span class="max-[700px]:hidden">
+                  в корзину
+                </span>
+
+              </button>
+
+              <div class="mt-6 space-y-3 text-sm">
+                <p>Можно купить до 2 штук</p>
+                <p>На этой неделе купили 5 человек</p>
+                <p class="text-gray-500 text-sm">Цвет: белый</p>
+                <p class="text-sm text-gray-500">В наличии</p>
+                <p class="text-sm text-gray-500">На этой неделе купили более 5 раз</p>
+              </div>
+                <div class="flex justify-center gap-2 mt-6">
+                <span class="w-3 h-3 bg-gray-100 rounded-full"></span>
+                <span class="w-3 h-3 bg-orange-600 rounded-full"></span>
+                <span class="w-3 h-3 bg-blue-900 rounded-full"></span>
+            </div>
+              
+
+
+              <!-- COUNTER -->
+              <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+                <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                  -
+                </button>
+
+                <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                  1
+                </span>
+
+                <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- BOTTOM -->
+        <div class="flex justify-center items-center flex-col pt-3">
+
+          <!-- PRICE -->
+          <div>
+            <span class="text-black/50 text-[16px]">
+
+              <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                vsv
+              </span>
+
+              Есть в наличии
+            </span>
+
+            <span class="text-black/50 text-[16px]">
+              Гарантия 1 год
+            </span>
+          </div>
+
+          <div>
+            <span class="text-sm text-gray-400 line-through">
+              137 900 ₽
+            </span>
+
+            <span class="text-lg font-bold">
+              137 900 ₽
+            </span>
+          </div>
+
+          <br>
+
+
+          <!-- корзину BUTTON -->
+          <button
+            class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+            <span class="text-lg font-bold hidden max-[700px]:block">
+              137 900 ₽
+            </span>
+
+            <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+            <span class="max-[700px]:hidden">
+              в корзину
+            </span>
+
+          </button>
+
+
+          <!-- COUNTER -->
+          <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+            <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+              -
+            </button>
+
+            <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+              1
+            </span>
+
+            <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <div class="flex justify-center items-center gap-8 pt-2">
+
+          <span class="text-blue-500 text-[16px]">
+            Хочу дешевле
+          </span>
+
+          <span class="text-[16px]">
+            Купить в 1 клик
+          </span>
+
+        </div>
+
+      </div>
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/14.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/14 titan.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/14 oq.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+
+        <div data-aos="fade-down" class="bg-white rounded-2xl shadow p-4 
+              aspect-square 
+              flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+            <!-- RATING -->
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">★★★★<span class="text-gray-300">★</span>
+                <span class="text-blue-500 text-[14px]">(14)</span>
+              </div>
+            </div>
+            <div>
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+            </div>
+
+
+          </div>
+          <div> <!-- TITLE -->
+            <h3 class="flex justify-center  items-center text-center text-[24px] font-semibold pb-3 ">
+              Apple iPhone XS Max <br>256 ГБ золотой
+            </h3>
+          </div>
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/14 gold.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain" />
+          </div>
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+                <span class="bg-[#0071E4] w-full text-[#0071E4] rounded-[50%]">vsv</span> Ожидается поступление</span>
+
+            </div>
+            <div>
+              <span class="text-sm text-gray-400">Мы можем сообщить вам, когда <br> товар появится в наличии</span>
+            </div>
+            <br>
+
+            <!-- BUTTON -->
+            <button
+              class="pb-3 w-full border-2 border-[#0071E4] text-blue-600 text-[20px] py-2 rounded-lg flex justify-center items-center">
+              сообщить о поступлении
+            </button>
+          </div>
+
+
+
+        </div>
+
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/Screenshot 2026-06-05 094839.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/Screenshot 2026-06-05 094825.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/Screenshot 2026-06-05 094833.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+
+        <div data-aos="fade-down"
+          class="card bg-white rounded-2xl shadow p-4 aspect-square flex flex-col justify-between">
+
+          <!-- TOP -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <div class="text-yellow-400 text-[24px] cursor-pointer">
+                ★★★★<span class="text-gray-300">★</span>
+
+                <span class="text-blue-500 text-[14px]">
+                  (14)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+
+              <button class="p-2 rounded-lg hover:bg-red-500 w-[40px]">
+                <img src="../imges/Vector (1).svg">
+              </button>
+
+              <button class="p-2 rounded-lg hover:bg-blue-500 w-[40px]">
+                <img src="../imges/gg_filters.svg">
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TITLE -->
+          <div>
+            <h3 class="flex justify-center items-center text-center text-[24px] font-semibold pb-3">
+              Apple iPhone XS Max <br>
+              256 ГБ золотой
+            </h3>
+          </div>
+
+
+          <!-- IMAGE -->
+          <div class="flex justify-center items-center flex-1">
+            <img src="../img/Screenshot 2026-06-05 094650.png" onclick="openModal()" class="w-[300px] h-[300px] object-contain">
+          </div>
+
+
+          <!-- BOTTOM -->
+          <div class="flex justify-center items-center flex-col pt-3">
+
+            <!-- PRICE -->
+            <div>
+              <span class="text-black/50 text-[16px]">
+
+                <span class="bg-[#6FD91C] w-full text-[#6FD91C] rounded-[50%]">
+                  vsv
+                </span>
+
+                Есть в наличии
+              </span>
+
+              <span class="text-black/50 text-[16px]">
+                Гарантия 1 год
+              </span>
+            </div>
+
+            <div>
+              <span class="text-sm text-gray-400 line-through">
+                137 900 ₽
+              </span>
+
+              <span class="text-lg font-bold">
+                137 900 ₽
+              </span>
+            </div>
+
+            <br>
+
+
+            <!-- корзину BUTTON -->
+            <button
+              class="buy-btn mt-1 w-full bg-blue-600 text-white text-[20px] py-2 rounded-lg flex justify-center items-center gap-2">
+
+              <span class="text-lg font-bold hidden max-[700px]:block">
+                137 900 ₽
+              </span>
+
+              <img class="w-[20px] h-[20px]" src="../imges/Vector (8).svg">
+
+              <span class="max-[700px]:hidden">
+                в корзину
+              </span>
+
+            </button>
+
+
+            <!-- COUNTER -->
+            <div class="cart-btn hidden mt-2 w-full flex justify-center items-center gap-3">
+
+              <button class="minus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                -
+              </button>
+
+              <span class="number bg-gray-200 px-5 py-2 rounded-lg text-[22px] font-bold">
+                1
+              </span>
+
+              <button class="plus bg-blue-600 text-white w-[45px] h-[45px] rounded-lg text-[28px]">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+          <div class="flex justify-center items-center gap-8 pt-2">
+
+            <span class="text-blue-500 text-[16px]">
+              Хочу дешевле
+            </span>
+
+            <span class="text-[16px]">
+              Купить в 1 клик
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+ 
+   <footer class="">
+      <div class="max-w-[1300px] mx-auto px-4 pt-7 pb-7">
+
+        <!-- content -->
+        <!-- Wrapper -->
+        <div class="grid  grid-cols-1  min-[780px]:grid-cols-4 gap-12">
+
+          <!-- Logo -->
+          <div>
+            <div class="flex items-start flex-col gap-4">
+              <img src="../imges/Vector (6).png" alt="logo" class="w-[42px] h-[52px] object-contain" />
+
+              <div>
+                <p class="text-[20px] md:text-[32px] text-[#878787]">
+                  © 2013-2022
+                </p>
+
+                <p class="mt-1 text-[16px] md:text-[18px] text-[#878787]">
+                  Продажа iPhone в МСК
+                </p>
+
+                <p class="mt-3 text-[13px] md:text-[15px] leading-[22px] text-[#b5b5b5] max-w-[520px]">
+                  *Сайт не является публичной офертой<br>
+                  Вся информация, указанная на сайте<br>
+                  носит информационный характер
+                <div class="br"></div>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Menu -->
+          <div>
+            <ul class="space-y-3 text-[18px] text-[#222]">
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Политика возврата</a></li>
+              <li><a href="#">Кредит</a></li>
+              <li><a href="#">Доставка и оплата</a></li>
+              <li><a href="#">Отзывы</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">Политика конфеденциальности</a></li>
+            </ul>
+          </div>
+
+          <!-- Products -->
+          <div>
+            <ul class="space-y-3 text-[18px] text-[#222]">
+              <li><a href="#">iPhone</a></li>
+              <li><a href="#">iPad</a></li>
+              <li><a href="#">Macbook и iMac</a></li>
+              <li><a href="#">Watch</a></li>
+              <li><a href="#">Аксессуары</a></li>
+              <li><a href="#">Акции</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h2 class="text-[32px] font-semibold leading-none">
+              +7 812 704 86 97
+            </h2>
+
+            <p class="mt-3 text-[#8d8d8d] text-[15px] md:text-[16px] leading-[24px]">
+              Бесплатная консультация <br />
+              С 10:00 до 21:00, без выходных
+            </p>
+
+
+            <!-- Social -->
+            <div class="flex items-center gap-2 mt-6">
+
+              <div> <a href="#" class="mt-5 text-[#0071E4] text-[20px] font-medium">
+                  Заказать звонок
+                </a></div>
+
+              <div class="flex items-center space-x-2">
+                <a href="#">
+                  <img class="w-[32px] h-[32px]" src="../imges/wa'.svg">
+                </a>
+                <a href="#">
+                  <img class="w-[32px] h-[32px]" src="../imges/wa' (1).svg">
+                </a>
+                <a href="#">
+                  <img class="w-[32px] h-[32px]" src="../imges/vk.svg">
+                </a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="mt-8 space-y-3 text-[18px] text-[#222]">
+              <p>Москва, ул Барклая 8</p>
+              <p>Москва, ул Барклая 8</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="fixed bottom-0 left-0 z-50 w-full bg-white border-t border-gray-200 xl:hidden">
+      <div class="grid h-[74px] grid-cols-4 max-w-[1300px] mx-auto gap-1"> <!-- Catalog --> <button type="button"
+          class="inline-flex items-center justify-center group"> <img class="w-[32px] h-[32px]"
+            src="../imges/pepicons_menu.svg" alt=""> <span
+            class="text-[18px] text-[#2b2b2b] max-[530px]:w-[20px] max-[570px]:hidden"> каталог </span> </button>
+        <!-- Cart --> <button type="button" class="flex items-center justify-center group"> <img
+            class="w-[32px] h-[32px]" src="../imges/ri_shopping-bag-3-fill.svg" alt=""> <span
+            class="text-[18px] text-[#2b2b2b] max-[530px]:w-[20px] max-[570px]:hidden "> корзина </span> </button>
+        <!-- Favorite --> <button type="button" class="inline-flex items-center justify-center group"> <img
+            class="w-[32px] h-[32px]" src="../imges/Vector (1).svg" alt=""> <span
+            class="text-[18px] text-[#2b2b2b] max-[530px]:w-[20px] max-[570px]:hidden"> избранное </span> </button>
+        <!-- Compare --> <button type="button" class="inline-flex items-center justify-center group"> <img
+            class="w-[32px] h-[32px]" src="../imges/gg_filters.svg" alt=""> <span
+            class="text-[18px] text-[#2b2b2b] max-[530px]:w-[20px] max-[570px]:hidden"> сравнение </span> </button>
+      </div>
+    </div>
+
+
+  <script src="./modal.js"></script>
+  <script src="../ma.js"></script>
+  <script src="./main.js"></script>
+  <script src="./maia.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
+</body>
+
+</html>
